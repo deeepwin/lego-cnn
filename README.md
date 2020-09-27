@@ -1,4 +1,4 @@
-# LEGO Convolutional Neural Network
+# LEGO Detection
 Convolutional Neural Network to detect LEGO Bricks.
 
 ## Project Goal
@@ -23,9 +23,32 @@ I have posted this project, to find interested machine learning enthusiasts, who
 
 ## Project Description
 
-The project is based on the Baloon example provided with MASK R-CNN. Hence, the folder and data organisation is the same (https://github.com/matterport/Mask_RCNN/tree/master/samples/balloon)
+The project is based on the Baloon example provided with MASK R-CNN. Hence, the folder and data organisation is the same (https://github.com/matterport/Mask_RCNN/tree/master/samples/balloon). You can find the project specific files including the notebooks here:
+
+`../samples/lego`
+
+### Installation
+
+This project requires TensorFlow 1.x. You need to use the *reqirements.txt* file to install the correct versions of the packages. This is critical. If you use Anaconda, install correct Python environment first through the Anaconda terminal:
+  
+`conda create --name maskrcnn python=3.5.5
+conda activate maskrcnn
+conda install GraphViz`
+
+GraphViz is required if you want to plot the model graph. Then install the rest of the packages with pip:
+
+`pip install -r requirements.txt`
 
 ### Data
 
+Training, validation and evaluation data sets must be placed here:
 
+`../datasets/lego`
+
+There are two datasets, all sets contain 1280 training images and 256 validation images. Each data set has the same 8 test images (eval). The dataset differ in:
+
+1. **Dataset6** - contains approximately 9 LEGO's per image which results in 11520 LEGO's to train. All LEGO's are non overlapping and not adjecent. This is the easy dataset.
+2. **Dataset22** - contains approximately 22 LEGO's per image which results in 28160 LEGO's to train. All LEGO's are non overlapping, but adjecent. This is the hard dataset.
+
+Both datasets are in a zip archive. Just unzip and use either or.
 
