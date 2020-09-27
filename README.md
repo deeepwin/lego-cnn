@@ -3,23 +3,35 @@ Convolutional Neural Network to detect LEGO Bricks.
 
 ## Project Goal
 
-The goal of this project is to correctly classify 14 different types of LEGO bricks in an image with an accuracy of >95% mAP. It is a object detection task .Each image chas multiple LEGO's, currently up to 20 per image. The neural network is only trained on synthetically generated LEGO images using Blender. The detection on the other hand is on real LEGO images taken by camera. 
+The goal of this project is to correctly classify 14 different types of LEGO bricks in an image with an accuracy of >95% mAP. This is an object detection task. Each image has multiple LEGO's, up to 22 per image. The neural network is trained on *synthetically* generated LEGO images using Blender. The detection on the other hand is on real LEGO images taken by camera. 
 
-The project uses a MASK R-CNN network architecture and is based on this code [Mask R-CNN](https://github.com/matterport/Mask_RCNN). Other network architectures have been tested, such as Retinanet and adding LSTM layers. However, the results are similar to MASK R-CNN.
+The project uses a MASK R-CNN network architecture and is based on this code [Mask R-CNN](https://github.com/matterport/Mask_RCNN). Other network architectures have been tested, such as Retinanet. Also, adding LSTM layers have been tested. However, the results are similar to the bare MASK R-CNN network architecture.
 
 ## Project Status
 
 The project is at the following status:
  
-- The CNN can detect the LEGO's in a predefined test set of real images to an accuracy of 74% mAP
-- This result is satisfactory, especially considering that the network was trained only on synthetic image data
-- The key challenge at the moment is, that the CNN cannot detect overlapping or neighboring LEGO's reliably
-- Trying to modify the data set, augmentation, architecture or training process did not imporive the detection accuracy
-- The issue seems that the nerual network cannot detect global feature patterns, but instead focues on local patterns
+- The CNN can detect the LEGO's in a predefined test set of real images to an accuracy of up to 74% mAP.
+- This first result is satisfactory. Especially considering that the network was trained on synthetic image data only.
+- Detection on synthetic data is very reliable, but not the goal of this project.
+
+This is an object detection result using a real image:
+
+![Test image 0000000002.png](https://github.com/deeepwin/lego-cnn/maskrcnn/datasets/lego/eval/0000000002.png?raw=true "Title")
 
 ## Key Challenge
 
-I have posted this project, to find interested machine learning enthusiasts, who are willing to contiune the work and solve the current challenge about neighboring LEGo's.
+The key challenge at the moment is, that the CNN cannot detect closely neighboring LEGO's on an image reliably.
+
+- Trying to modify the dataset, augmentation, architecture or training process did not help to achieve acceptable accuracy.
+- The RPN network has particularly difficulties to locate a LEGO on the image (rois far off), if LEGO's are close to each other.
+- First analysis indicates that the neural network (RPN) cannot detect global feature patterns, but instead focues on local patterns
+
+This is an example of how the detection looks like on a image with neighboring LEGO's: 
+
+![Test image 0000000002.png](https://github.com/deeepwin/lego-cnn/maskrcnn/datasets/lego/eval/0000000002.png?raw=true "Title")
+
+I have posted this project, to find interested machine learning enthusiasts, who are willing to contiune the work and solve the current challenge about neighboring LEGo's. Please contribute directly or let me know.
 
 ## Project Description
 
@@ -38,6 +50,8 @@ conda install GraphViz`
 GraphViz is required if you want to plot the model graph. Then install the rest of the packages with pip:
 
 `pip install -r requirements.txt`
+
+In case you face issues in installation, please let me know.
 
 ## Data
 
