@@ -1,4 +1,4 @@
-# lego-cnn
+# LEGO Convolutional Neural Network
 Convolutional Neural Network to detect LEGO Bricks.
 
 ## Project Goal
