@@ -5,7 +5,7 @@ Convolutional Neural Network to detect LEGO Bricks.
 
 The goal of this project is to correctly classify 14 different types of LEGO bricks in an image with an accuracy of >95% mAP. This is an object detection task. Each image has multiple LEGO's, up to 22 per image. The neural network is trained on *synthetically* generated LEGO images using Blender. The detection on the other hand is on real LEGO images taken by camera. 
 
-The project uses a MASK R-CNN network architecture and is based on this code [Mask R-CNN](https://github.com/matterport/Mask_RCNN). Other network architectures have been tested, such as Retinanet. Also, adding LSTM layers have been tested. However, the results are similar to the bare MASK R-CNN network architecture.
+The project uses a Mask R-CNN network architecture and is based on this code [Mask R-CNN](https://github.com/matterport/Mask_RCNN). Other network architectures have been tested, such as Retinanet. Also, adding LSTM layers have been tested. However, the results are similar to the bare MASK R-CNN network architecture.
 
 ## Project Status
 
@@ -35,23 +35,20 @@ I have posted this project, to find interested machine learning enthusiasts, who
 
 ## Project Description
 
-The project is based on the Baloon example provided with MASK R-CNN. Hence, the folder and data organisation is the same [Balloon](https://github.com/matterport/Mask_RCNN/tree/master/samples/balloon). You can find the project specific files including the notebooks here:
+The project is based on the Balloon example provided with Mask R-CNN project. Hence, the folder and data organisation is the same [Balloon](https://github.com/matterport/Mask_RCNN/tree/master/samples/balloon). You can find the project specific files including the notebooks here:
 
 `../samples/lego`
 
-## Installation
+## Run on Colab
 
-This project requires TensorFlow 1.x. You need to use the *reqirements.txt* file to install the correct versions of the packages. This is critical. If you use Anaconda, install correct Python environment first through the Anaconda terminal:
-  
-`conda create --name maskrcnn python=3.5.5
-conda activate maskrcnn
-conda install GraphViz`
+This is the easiest way. 
 
-GraphViz is required if you want to plot the model graph. Then install the rest of the packages with pip:
-
-`pip install -r requirements.txt`
-
-In case you face issues in installation, please let me know.
+1. Copy the entire Github project to your Google drive.
+2. In the webbrowser, go to Google Drive and double-click on *train_lego_on_colab.ipynb*
+3. Click on *"open with Google Colaboratory"*
+4. Make sure to connect your Google Drive to Colab
+5. You might need to adjust the path in the Notebook */content/drive/My Drive/Colab/maskrcnn*
+6. Run the notebook
 
 ## Data
 
@@ -66,13 +63,22 @@ There are two datasets, all sets contain 1280 training images and 256 validation
 
 Both datasets are in a zip archive. Just unzip and use either or.
 
-## Train on Colab
 
-This is the easiest way. Just copy this project on colab server, unzip the dataset and open this notebook on Colab:
-
-`train_lego_on_colab.ipynb`
 
 ## Train on Local Machine
+
+This project requires TensorFlow 1.x. You need to use the *reqirements.txt* file to install the correct versions of the packages. This is critical. If you use Anaconda, install correct Python environment first through the Anaconda terminal:
+  
+`conda create --name maskrcnn python=3.5.5
+conda activate maskrcnn
+conda install GraphViz`
+
+GraphViz is required if you want to plot the model graph. Then install the rest of the packages with pip:
+
+`pip install -r requirements.txt`
+
+In case you face issues in installation, please let me know.
+
 
 If you train locally make sure you run on GPU with enough memory. Nevertheless, it is often of advangtage to just start the training locally, to check if the configuration is correct and if there is no error, before running it on Colab or Kaggle. To do this, you can use the following python file:
 
