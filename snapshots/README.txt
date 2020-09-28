@@ -1,1 +1,1 @@
-To upload folder.
+Where training data will be stored.
