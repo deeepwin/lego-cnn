@@ -11,9 +11,9 @@ The project uses a Mask R-CNN network architecture and is based on this code [Ma
 
 The project is at the following status:
  
-- The CNN can detect the LEGO's in a predefined test set of real images to an accuracy of up to 74% mAP.
-- This first result is satisfactory. Especially considering that the network was trained on synthetic image data only.
-- Detection on synthetic data is very reliable, but not the goal of this project.
+* The CNN can detect the LEGO's in a predefined test set of real images to an accuracy of up to 74% mAP.
+* This first result is satisfactory. Especially considering that the network was trained on synthetic image data only.
+* Detection on synthetic data is very reliable, but not the goal of this project.
 
 This is an object detection result using a real image:
 
@@ -23,9 +23,9 @@ This is an object detection result using a real image:
 
 The key challenge at the moment is, that the CNN cannot detect closely neighboring LEGO's on an image reliably.
 
-- Trying to modify the dataset, augmentation, architecture or training process did not help to achieve acceptable accuracy.
-- The RPN network has particularly difficulties to locate a LEGO on the image (rois far off), if LEGO's are close to each other.
-- First analysis indicates that the neural network (RPN) cannot detect global feature patterns, but instead focues on local patterns
+* Trying to modify the dataset, augmentation, architecture or training process did not help to achieve acceptable accuracy.
+* The RPN network has particularly difficulties to locate a LEGO on the image (rois far off), if LEGO's are close to each other.
+* First analysis indicates that the neural network (RPN) cannot detect global feature patterns, but instead focues on local patterns
 
 This is an example of how the detection looks like on a image with neighboring LEGO's: 
 
@@ -42,9 +42,9 @@ This project is based on the Balloon example provided with Mask R-CNN project. H
 
 There are two datasets that you can use. All datasets contain 1280 training images and 256 validation images. Each data set has the same 8 test images (eval folder). All images are of size 800x600px.The datasets differ in the follwwing way:
 
-Dataset6: Contains approximately 9 LEGO's per image which results in 11520 LEGO's for training. All LEGO's are not adjacent. This is the easy dataset.
+**Dataset6** - Contains approximately 9 LEGO's per image which results in 11520 LEGO's for training. All LEGO's are not adjacent. This is the easy dataset.
 
-Dataset22: Contains approximately 22 LEGO's per image which results in 28160 LEGO's for training. All LEGO's are adjeaent. This is the hard dataset.
+**Dataset22** - Contains approximately 22 LEGO's per image which results in 28160 LEGO's for training. All LEGO's are adjeaent. This is the hard dataset.
 
 Both datasets are in a zip archive. Just unzip and use either or. Place the datasets here in the project folder:
 
