@@ -105,19 +105,4 @@ If you run on Colab, the **train_lego_on_colab.ipynb** notebook contains already
 additional notebooks, that go into more detail. Some are to inspect the network, such as visualization for the feature maps. Others for inference purposes or checking the datasets.
 
 
-All the best.
-
-
-
-
-
-
-
-
-
-
-
-
-
-The easiest is to 
 
