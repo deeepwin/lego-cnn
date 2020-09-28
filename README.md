@@ -11,21 +11,29 @@ The project uses a Mask R-CNN network architecture and is based on this code [Ma
 
 The project is at the following status:
  
-* The CNN can detect the LEGO's in a predefined test set of real images to an accuracy of up to 74% mAP.
-* This first result is satisfactory. Especially considering that the network was trained on synthetic image data only.
-* Detection on synthetic data is very reliable, but not the goal of this project.
+- The CNN can detect the LEGO's in a real images to an accuracy of up to 74% mAP.
+- This first result is quite, satisfactory, considering that the network was trained on synthetic image data only.
+- Detection of LEGO's in a synthetic image is very reliable, but was not the goal of this project.
 
-This is an object detection result using a real image:
+This is an example of detecting LEGO's in a real image:
 
 ![Test image 0000000002.png](https://github.com/deeepwin/lego-cnn/maskrcnn/datasets/lego/eval/0000000002.png?raw=true "Title")
 
+This is an example of detecting LEGO's in a synthetic image, the same type of images the network was trained at:
+
+![Test image 0000000002.png](https://github.com/deeepwin/lego-cnn/maskrcnn/datasets/lego/eval/0000000002.png?raw=true "Title")
+
+The number on the top is the classifier id, that the CNN has detected. The number below is the classifier id ground truth.
+
 ## Key Challenge
 
-The key challenge at the moment is, that the CNN cannot detect closely neighboring LEGO's on an image reliably.
+The key challenge at the moment is, that the CNN cannot detect neighboring LEGO's on an image very reliably.
 
-* Trying to modify the dataset, augmentation, architecture or training process did not help to achieve acceptable accuracy.
-* The RPN network has particularly difficulties to locate a LEGO on the image (rois far off), if LEGO's are close to each other.
-* First analysis indicates that the neural network (RPN) cannot detect global feature patterns, but instead focues on local patterns
+- Trying to modify the dataset, augmentation, architecture or training process did not help to solve the bad detection accuracy.
+- The RPN network has particularly difficulties to locate a LEGO on the image (rois far off), if LEGO's are close to each other.
+- First analysis indicates that the neural network (RPN) cannot detect global feature patterns, but instead focues on local patterns.
+
+Typically in a CNN the network builds up more abstract representations of the object as deeper the layers go. However, from the analysis of the detection result, it appears the network focues too much on local patterns. 
 
 This is an example of how the detection looks like on a image with neighboring LEGO's: 
 
@@ -97,6 +105,7 @@ If you run on Colab, the **train_lego_on_colab.ipynb** notebook contains already
 additional notebooks, that go into more detail. Some are to inspect the network, such as visualization for the feature maps. Others for inference purposes or checking the datasets.
 
 
+All the best.
 
 
 
