@@ -44,10 +44,11 @@ The project is based on the Balloon example provided with Mask R-CNN project. He
 This is the easiest way. 
 
 1. Copy the entire Github project to your Google drive.
-2. In the webbrowser, go to Google Drive and double-click on *train_lego_on_colab.ipynb*
-3. Click on *"open with Google Colaboratory"*
-4. Make sure to connect your Google Drive to Colab
-5. You might need to adjust the path in the Notebook */content/drive/My Drive/Colab/maskrcnn*
+2. Copy the dataset into the folder **../datasets/lego**, this might take some time
+2. Open a web browser, go to your Google Drive and double-click on the **train_lego_on_colab.ipynb** notebook
+3. Click on **Open with Google Colaboratory**
+4. Make sure to connect your Google Drive to Colab. This is a button on the left top side.
+5. You might need to adjust the paths in the Notebook **/content/drive/My Drive/lego-cnn**
 6. Run the notebook
 
 ## Data
