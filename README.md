@@ -48,11 +48,9 @@ Dataset22: Contains approximately 22 LEGO's per image which results in 28160 LEG
 
 Both datasets are in a zip archive. Just unzip and use either or. Place the datasets here in the project folder:
 
-`../datasets/lego/train`
-
-`../datasets/lego/val`
-
-`../datasets/lego/eval`
+`../datasets/lego/train
+../datasets/lego/val
+../datasets/lego/eval`
 
 ## Run on Colab
 
