@@ -35,40 +35,40 @@ I have posted this project, to find interested machine learning enthusiasts, who
 
 ## Project Description
 
-The project is based on the Balloon example provided with Mask R-CNN project. Hence, the folder and data organisation is the same [Balloon](https://github.com/matterport/Mask_RCNN/tree/master/samples/balloon). You can find the project specific files including the notebooks here:
+This project is based on the Balloon example provided with Mask R-CNN project. Hence, the folder and data organisation is the same. Have a look here to get startet:  [Balloon](https://github.com/matterport/Mask_RCNN/tree/master/samples/balloon). You can find the project specific files including the notebooks here:
 
-`../samples/lego`
-
-## Run on Colab
-
-This is the easiest way. 
-
-1. Copy the entire Github project to your Google drive.
-2. Copy the dataset into the folder **../datasets/lego**, this might take some time
-2. Open a web browser, go to your Google Drive and double-click on the **train_lego_on_colab.ipynb** notebook
-3. Click on **Open with Google Colaboratory**
-4. Make sure to connect your Google Drive to Colab. This is a button on the left top side.
-5. You might need to adjust the paths in the Notebook **/content/drive/My Drive/lego-cnn**
-6. Run the notebook
 
 ## Data
 
-Training, validation and evaluation data sets must be placed here:
+There are two datasets that you can use. All datasets contain 1280 training images and 256 validation images. Each data set has the same 8 test images (eval folder). All images are of size 800x600px.The datasets differ in the follwwing way:
 
-`../datasets/lego`
+Dataset6: Contains approximately 9 LEGO's per image which results in 11520 LEGO's for training. All LEGO's are not adjacent. This is the easy dataset.
 
-There are two datasets, all sets contain 1280 training images and 256 validation images. Each data set has the same 8 test images (eval). All images are of size 800x600px.The dataset differ in:
+Dataset22: Contains approximately 22 LEGO's per image which results in 28160 LEGO's for training. All LEGO's are adjeaent. This is the hard dataset.
 
-1. Dataset6, contains approximately 9 LEGO's per image which results in 11520 LEGO's to train. All LEGO's are not adjacent. This is the easy dataset.
-2. Dataset22, contains approximately 22 LEGO's per image which results in 28160 LEGO's to train. All LEGO's are  adjeaent. This is the hard dataset.
+Both datasets are in a zip archive. Just unzip and use either or. Place the datasets here in the project folder:
 
-Both datasets are in a zip archive. Just unzip and use either or.
+`../datasets/lego/train`
+`../datasets/lego/val`
+`../datasets/lego/eval`
+
+## Run on Colab
+
+This is the easiest way to run this project.
+
+1. Open a web browser, go to your Google Drive 
+2. Copy the entire Github project to your top level Google drive
+2. Copy the dataset into the folder **../datasets/lego** as described in the previous section
+4. Double-click on the **train_lego_on_colab.ipynb** notebook
+5. Click on **Open with Google Colaboratory**
+6. Make sure to connect your Google Drive to Colab. This is a button on the left top side
+7. You might need to adjust the paths in the notebook **/content/drive/My Drive/lego-cnn**
+8. Run the notebook
 
 
+## Run on Local Machine
 
-## Train on Local Machine
-
-This project requires TensorFlow 1.x. You need to use the *reqirements.txt* file to install the correct versions of the packages. This is critical. If you use Anaconda, install correct Python environment first through the Anaconda terminal:
+To run on your local machine is a bit more tricky. This project requires TensorFlow 1.x. You need to use the *reqirements.txt* file to install the correct versions of the packages. This is critical. If you use Anaconda, install correct Python environment first through the Anaconda terminal:
   
 `conda create --name maskrcnn python=3.5.5
 conda activate maskrcnn
@@ -80,23 +80,19 @@ GraphViz is required if you want to plot the model graph. Then install the rest 
 
 In case you face issues in installation, please let me know.
 
-
-If you train locally make sure you run on GPU with enough memory. Nevertheless, it is often of advangtage to just start the training locally, to check if the configuration is correct and if there is no error, before running it on Colab or Kaggle. To do this, you can use the following python file:
+If you train locally make sure you run on GPU with enough memory. Nevertheless, it is often of advantage to just start the training locally, to check if the configuration is correct and if there is no error, before running it on Colab or Kaggle. To do this, you can use the following python file:
 
 `python train_lego_locally.py`
 
 Uncomment or comment the individual lines to call the main function (tmain) at your wish.
 
-
 ## Evaluation
 
-If you run on Colab, the *train_lego_on_colab* notebook contains already a section to analyse the RPN and a section to run the evaluation (inference). This is the best starting point. If this runs, your all set.
-
-In the folder
+If you run on Colab, the **train_lego_on_colab.ipynb** notebook contains already a section to analyse the RPN and a section to run the evaluation (inference). This is the best starting point. If this runs, your all set. You can find in the following folder
 
 `../samples/lego`
 
-you find additional notebooks, that go into more detail. Some are to inspect the network in more detail, such as visualization for the feature maps. Others for inference purposes.
+additional notebooks, that go into more detail. Some are to inspect the network, such as visualization for the feature maps. Others for inference purposes or checking the datasets.
 
 
 
