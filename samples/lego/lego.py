@@ -154,8 +154,8 @@ class LegoConfig(Config):
      # Resnet backbone filter configuration
     BACKBONE_FITLERS_CONFIG = BACKBONE_RESNET_BASIC_DEFAULT
 
-    FPN_CLASSIF_FC_LAYERS_SIZE = 256                        # LSTM max. 256
-    TRAIN_ROIS_PER_IMAGE = 20                               # LSTM max. 50
+    #FPN_CLASSIF_FC_LAYERS_SIZE = 256                        # With LSTM cannot be more than 256                     
+    #TRAIN_ROIS_PER_IMAGE = 20                               # Test in training (default 200), remove later
     POST_NMS_ROIS_INFERENCE = 1000                          # Test in interference (default 1000), remove later
 
     # Plot and save graph to file.
