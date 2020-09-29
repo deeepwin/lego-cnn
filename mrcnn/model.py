@@ -1087,9 +1087,9 @@ def fpn_classifier_graph(rois, feature_maps, image_meta,
     # https://medium.com/@shivajbd/understanding-input-and-output-shape-in-lstm-keras-c501ee95c65e
     #
     # In our case we already have the right shape after the lambda layer of [1, 20, 1024]
-    shared = KL.Reshape((20, fc_layers_size))(shared)
-    shared = KL.LSTM(20*fc_layers_size, dropout=0.5, name='mrcnn_lstm1')(shared)
-    shared = KL.Reshape((20, fc_layers_size))(shared)
+    #shared = KL.Reshape((30, fc_layers_size))(shared)
+    #shared = KL.LSTM(30*fc_layers_size, dropout=0.5, name='mrcnn_lstm1')(shared)
+    #shared = KL.Reshape((30, fc_layers_size))(shared)
 
     # Classifier head
     mrcnn_class_logits = KL.TimeDistributed(KL.Dense(num_classes),
@@ -2700,7 +2700,7 @@ class MaskRCNN():
             validation_steps=self.config.VALIDATION_STEPS,
             max_queue_size=100,
             workers=workers,
-            use_multiprocessing=True
+            use_multiprocessing=TimeDistributed
         )
         self.epoch = max(self.epoch, epochs)
 
