@@ -17,11 +17,11 @@ The project is at the following status:
 
 This is an example of detecting LEGO's in a real image:
 
-![Example of a detection with a real image](https://github.com/deeepwin/lego-cnn/maskrcnn/samples/images/image_1.png?raw=true "Title")
+![Example of a detection with a real image](https://github.com/deeepwin/lego-cnn/samples/images/image_1.png)
 
 This is an example of detecting LEGO's in a synthetic image, the same type of images the network was trained at:
 
-![Example of a detection with a synthetic image](https://github.com/deeepwin/lego-cnn/maskrcnn/samples/images/image_1.png?raw=true "Title")
+![Example of a detection with a synthetic image](https://github.com/deeepwin/lego-cnn/samples/images/image_1.png)
 
 The number on the top is the classifier id, that the CNN has detected. The number below is the classifier id ground truth.
 
@@ -37,7 +37,7 @@ Typically in a CNN the network builds up more abstract representations of the ob
 
 This is an example of how the detection looks like on a image with neighboring LEGO's: 
 
-![Test image 0000000002.png](https://github.com/deeepwin/lego-cnn/maskrcnn/datasets/lego/eval/0000000002.png?raw=true "Title")
+![Test image 0000000002.png](https://github.com/deeepwin/lego-cnn/samples/images/image_3.png?raw=true "Title")
 
 I have posted this project, to find interested machine learning enthusiasts, who are willing to contiune the work and solve the current challenge about neighboring LEGo's. Please contribute directly or let me know.
 
