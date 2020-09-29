@@ -17,11 +17,11 @@ The project is at the following status:
 
 This is an example of detecting LEGO's in a real image:
 
-![Example of a detection with a real image](https://github.com/deeepwin/lego-cnn/samples/images/image_1.png)
+![](samples/images/image_1.png)
 
 This is an example of detecting LEGO's in a synthetic image, the same type of images the network was trained at:
 
-![Example of a detection with a synthetic image](https://github.com/deeepwin/lego-cnn/samples/images/image_1.png)
+![](samples/images/image_2.png)
 
 The number on the top is the classifier id, that the CNN has detected. The number below is the classifier id ground truth.
 
