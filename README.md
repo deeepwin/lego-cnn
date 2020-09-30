@@ -45,7 +45,7 @@ It can be seen, that the region of interest boxes (ROIS) are not well predicted 
 
 I was able to integrate an LSTM network into the Mask R-CNN classifier network. However, extending the RPN network with LSTM layers will increase the overall network parameters and require an enormous amount of memory. Hence, the hardware is the limiting factor. I have posted this project, to find interested machine learning enthusiasts, who are willing to continue the work and solve the current challenge about neighboring LEGO's. Maybe you have another idea to overcome the current issues. Please let me know if you are interested or have questions.
 
-## Project Description
+## Project Structure
 
 This project is based on the Balloon example provided with Mask R-CNN project. Hence, the folder and data organization is the same. If you are new to this type of projects, please have a look here   [Balloon](https://github.com/matterport/Mask_RCNN/tree/master/samples/balloon) to get started. The project requires TensorFlow 1.x.
 
