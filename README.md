@@ -12,18 +12,16 @@ The project uses a Mask R-CNN network architecture and is based on this code [Ma
 The project is at the following status:
  
 - The CNN can detect the LEGO's in a real images to an accuracy of up to 74% mAP.
-- This first result is quite, satisfactory, considering that the network was trained on synthetic image data only.
+- This first result is quite satisfactory, considering that the network was trained on synthetic image data only.
 - Detection of LEGO's in a synthetic image is very reliable, but was not the goal of this project.
 
 This is an example of detecting LEGO's in a real image:
 
 ![](samples/images/image_1.png)
 
-This is an example of detecting LEGO's in a synthetic image, the same type of images the network was trained at:
+The numbers with the blue background are the classifier id and probability of the prediction. The number with the green background is the classifier id ground truth. This is an example of detecting LEGO's in a synthetic image, the same type of images the network was trained at:
 
-![](samples/images/image_2.png)
-
-The number on the top is the classifier id, that the CNN has detected. The number below is the classifier id ground truth.
+![](samples/images/image_3.png)
 
 ## Key Challenge
 
@@ -33,17 +31,21 @@ The key challenge at the moment is, that the CNN cannot detect neighboring LEGO'
 - The RPN network has particularly difficulties to locate a LEGO on the image (rois far off), if LEGO's are close to each other.
 - First analysis indicates that the neural network (RPN) cannot detect global feature patterns, but instead focues on local patterns.
 
-Typically in a CNN the network builds up more abstract representations of the object as deeper the layers go. However, from the analysis of the detection result, it appears the network focues too much on local patterns. 
-
 This is an example of how the detection looks like on a image with neighboring LEGO's: 
 
-![Test image 0000000002.png](https://github.com/deeepwin/lego-cnn/samples/images/image_3.png?raw=true "Title")
+![](samples/images/image_2.png)
+
+It can be seen that the region of interest boxes (ROIS) are not well predicted on some LEGO's by the RPN. This makes it more difficult for the classification and segmentation networks to predict correctly. Typically, in a CNN the network builds up more abstract representations of the object as deeper the layers go. However, from the analysis of the detection results, it appears the network focues too much on local patterns instead. It cannot recognize larger spatial dependencies. Other projects have been addressing this issue.
+
+>[“Convolutional Recurrent Neural Networks: Learning Spatial Dependencies for Image Representation.”](http://www.google.com/url?q=http%3A%2F%2Fwww.cv-foundation.org%2Fopenaccess%2Fcontent_cvpr_workshops_2015%2FW03%2Fpapers%2FZuo_Convolutional_Recurrent_Neural_2015_CVPR_paper.pdf&sa=D&sntz=1&usg=AFQjCNGhHjUKRVuE5aMg1t71GllfHG0alA)
+
+>[“CNN-RNN: a large-scale hierarchical image classification framework”](https://link.springer.com/article/10.1007/s11042-017-5443-x)
 
 I have posted this project, to find interested machine learning enthusiasts, who are willing to contiune the work and solve the current challenge about neighboring LEGo's. Please contribute directly or let me know.
 
 ## Project Description
 
-This project is based on the Balloon example provided with Mask R-CNN project. Hence, the folder and data organisation is the same. Have a look here to get startet:  [Balloon](https://github.com/matterport/Mask_RCNN/tree/master/samples/balloon). You can find the project specific files including the notebooks here:
+This project is based on the Balloon example provided with Mask R-CNN project. Hence, the folder and data organisation is the same. Have a look here to get started:  [Balloon](https://github.com/matterport/Mask_RCNN/tree/master/samples/balloon). You can find the project specific files including the notebooks here:
 
 
 ## Data
