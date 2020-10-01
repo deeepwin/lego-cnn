@@ -1,6 +1,6 @@
 """
 Mask R-CNN
-Train on the ego dataset and implement color splash effect.
+Train on the lego dataset and implement color splash effect.
 
 Copyright (c) 2018 Matterport, Inc.
 Licensed under the MIT License (see LICENSE for details)
