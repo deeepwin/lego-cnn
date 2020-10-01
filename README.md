@@ -13,7 +13,7 @@ The project is at the following status:
  
 - The CNN can detect the LEGO's in a real image to an accuracy of up to 74% mAP.
 - This first result is quite satisfactory, considering that the network was trained on synthetic image data only.
-- Detection of LEGO's in a synthetic image is reliable, but was not the goal of this project.
+- The detection of LEGO's in a synthetic image is reliable and equal to validation losses.
 
 This is an example of detecting LEGO's in a real image:
 
