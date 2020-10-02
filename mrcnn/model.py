@@ -559,7 +559,7 @@ class PyramidROIAlign(KE.Layer):
 
         # Re-add the batch dimension
         shape = tf.concat([tf.shape(boxes)[:2], tf.shape(pooled)[1:]], axis=0)
-        pooled = tf.reshape(pooled, shape) # MW - different in Mobilenet code
+        pooled = tf.reshape(pooled, shape)
         return pooled
 
     def compute_output_shape(self, input_shape):
@@ -782,7 +782,7 @@ class DetectionTargetLayer(KE.Layer):
     def compute_output_shape(self, input_shape):
         return [
             (None, self.config.TRAIN_ROIS_PER_IMAGE, 4),  # rois
-            (None, self.config.TRAIN_ROIS_PER_IMAGE),  # class_ids # MW - different in Mobilenet code
+            (None, self.config.TRAIN_ROIS_PER_IMAGE),  # class_ids
             (None, self.config.TRAIN_ROIS_PER_IMAGE, 4),  # deltas
             (None, self.config.TRAIN_ROIS_PER_IMAGE, self.config.MASK_SHAPE[0],
              self.config.MASK_SHAPE[1])  # masks
@@ -1099,7 +1099,7 @@ def fpn_classifier_graph(rois, feature_maps, image_meta,
 
     # BBox head
     # [batch, num_rois, NUM_CLASSES * (dy, dx, log(dh), log(dw))]
-    # MWI in inference this is num_rois = POST_NMS_ROIS_INFERENCE = 1000 in current configuration
+    # MW In inference this is num_rois = POST_NMS_ROIS_INFERENCE = 1000 in current configuration
     x = KL.TimeDistributed(KL.Dense(num_classes * 4, activation='linear'),
                            name='mrcnn_bbox_fc')(shared)
     # Reshape to [batch, num_rois, NUM_CLASSES, (dy, dx, log(dh), log(dw))]
@@ -1154,8 +1154,6 @@ def build_fpn_mask_graph(rois, feature_maps, image_meta,
                            name='mrcnn_mask_bn4')(x, training=train_bn)
     x = KL.Activation('relu')(x)
     
-    # MW - different in Mobilenet code
-
     x = KL.TimeDistributed(KL.Conv2DTranspose(256, (2, 2), strides=2, activation="relu"),
                            name="mrcnn_mask_deconv")(x)
     x = KL.TimeDistributed(KL.Conv2D(num_classes, (1, 1), strides=1, activation="sigmoid"),
@@ -2189,7 +2187,6 @@ class MaskRCNN():
                                               input_image_meta,
                                               config.MASK_POOL_SIZE,
                                               config.NUM_CLASSES,
-                                              # MW - different in Mobilenet code
                                               train_bn=config.TRAIN_BN)
 
             # TODO: clean up (use tf.identify if necessary)
@@ -2271,7 +2268,6 @@ class MaskRCNN():
                                               input_image_meta,
                                               config.MASK_POOL_SIZE,
                                               config.NUM_CLASSES,
-                                              # MW - different in Mobilenet code
                                               train_bn=config.TRAIN_BN)
 
             # Inference Model
@@ -2647,7 +2643,6 @@ class MaskRCNN():
             "mrcnn_only": r"^(?!rpn\_).*",         # train mrcnn with its backbone
             "rpn_only": r"(rpn\_.*)",              # train rpn with its backbone
         }
-        # MW - different in Mobilenet code
 
         if layers in layer_regex.keys():
             layers = layer_regex[layers]
@@ -2805,7 +2800,6 @@ class MaskRCNN():
             full_masks.append(full_mask)
         full_masks = np.stack(full_masks, axis=-1)\
             if full_masks else np.empty(original_image_shape[:2] + (0,))
-            # MW - different in Mobilenet code
 
         return boxes, class_ids, scores, full_masks
 
@@ -3199,13 +3193,11 @@ def mold_image(images, config):
     the mean pixel and converts it to float. Expects image
     colors in RGB order.
     """
-    # MW - different in Mobilenet code
     return images.astype(np.float32) - config.MEAN_PIXEL
 
 
 def unmold_image(normalized_images, config):
     """Takes a image normalized with mold() and returns the original."""
-    # MW - different in Mobilenet code
     return (normalized_images + config.MEAN_PIXEL).astype(np.uint8)
 
 
