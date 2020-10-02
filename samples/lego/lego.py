@@ -156,29 +156,10 @@ class LegoConfig(Config):
 
     #FPN_CLASSIF_FC_LAYERS_SIZE = 256                        # With LSTM cannot be more than 256                     
     #TRAIN_ROIS_PER_IMAGE = 20                               # Test in training (default 200), remove later
-    POST_NMS_ROIS_INFERENCE = 1000                          # Test in interference (default 1000), remove later
+    POST_NMS_ROIS_INFERENCE = 1000                           # Test in interference (default 1000), remove later
 
     # Plot and save graph to file.
     PLOT_GRAPH = False                                       # None: to not plot, False: plot, True: plot nested / details
-
-    # POST_NMS_ROIS_TRAINING = 2000                         # Default: 2000. For training I would leave so that DetectionTargetLayer() has 
-                                                            # more than TRAIN_ROIS_PER_IMAGE=200, don't know what would happen if I set to 30 only.
-                                                            # TODO but when USE_RANDOM_RPN_ROIS = False, I have only up to 20 GT boxes (annotations)
-                                                            # versus 2000 total proposals which makes ROI_POSITIVE_RATIO super bad -> 0.01 bzw 1% verus 33%
-
-    # The quesion was if I shall leave the default setting of 1000? -> Yes.
-    # Especially when USE_RANDOM_RPN_ROIS = False and we actually use the
-    # few GT boxes as proposals (typically no more than 20 annotations per
-    # image) the number of proposals must be higer than 20 / 0.33. The reason
-    # is, that build_detection_targets() or DetectionTargetLayer() will 
-    # maintain a ratio of ROI_POSITIVE_RATIO=0.33 between positive and negative
-    # propsosals, meaning only 33% shall have IoU of > 0.5. Hence if I have
-    # too many GT boxes, it will cut them off. The POST_NMS_ROIS_INFERENCE
-    # must have a minimum size. 
-    # Nevertheless, even if I set it to the default of 1000, I figured
-    # that all GT boxes make it as proposals through build_detection_targets().
-    # Hence I would leave the default value for now
-    # POST_NMS_ROIS_INFERENCE = int(20/ROI_POSITIVE_RATIO)
 
 ############################################################
 #  Dataset
