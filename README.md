@@ -77,6 +77,8 @@ This is the easiest way to run this project.
 6. You might need to adjust the paths in the notebook **/content/drive/My Drive/lego-cnn** to your setup.
 7. Run the notebook
 
+Please note that training on Colab is not working at the moment. There is a bug, probably relating to the versions. Run training on local machine until bug is fixed. 
+
 ## Run on Local Machine
 
 To run on your local machine is a bit trickier. This project requires TensorFlow 1.x. You need to use the *reqirements.txt* file to install the correct versions of the packages. This is critical. If you use Anaconda, make sure to install the correct Python environment first through the Anaconda terminal:
