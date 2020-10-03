@@ -71,7 +71,7 @@ This is the easiest way to run this project.
 
 1. Open a web browser, go to your Google Drive.
 2. Copy the entire Github project to your own top-level Google drive.
-3. Double-click on the **train_lego_on_colab.ipynb** notebook.
+3. Double-click on the **train_lego_on_colab_github.ipynb** notebook.
 4. Click on **Open with Google Colaboratory** to open the notebook in Colab.
 5. Make sure to connect your Google Drive to Colab. This is a button on the left top side.
 6. You might need to adjust the paths in the notebook **/content/drive/My Drive/lego-cnn** to your setup.
@@ -99,7 +99,7 @@ Uncomment or comment the individual lines to call the main function (tmain) with
 
 ## Evaluation
 
-If you run on Colab, the **train_lego_on_colab.ipynb** notebook contains already a section to analyze the RPN and a section to run the evaluation (inference). This is the best starting point. If this runs, your all set. In the 
+If you run on Colab, the **train_lego_on_colab_github.ipynb** notebook contains already a section to analyze the RPN and a section to run the evaluation (inference). This is the best starting point. If this runs, your all set. In the 
 
 `../samples/lego`
 
