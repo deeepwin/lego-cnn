@@ -1,5 +1,5 @@
 # Convolutional Neural Network to detect LEGO Bricks
-Using Mask R-CNN to detect LEGO bricks on an image trained on synthetical data only.
+Detect LEGO bricks with Mask R-CNN using synthetical images for training.
 
 ## Project Goal
 
