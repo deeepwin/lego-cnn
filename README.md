@@ -53,9 +53,9 @@ This project is based on the Balloon example provided with Mask R-CNN project. H
 
 There are two datasets that you can use. All datasets contain 1280 training images and 256 validation images. Each data set has the same 8 test images (eval folder). All images are of size 800x600px.The datasets differ in the following way:
 
-* **Dataset6**, contains approximately 9 LEGO's per image which results in 11520 LEGO's for training. All LEGO's are *not adjacent*.
+- Dataset6, contains approximately 9 LEGO's per image which results in 11520 LEGO's for training. All LEGO's are *not adjacent*.
 
-* **Dataset22**, contains approximately 22 LEGO's per image which results in 28160 LEGO's for training. All LEGO's are *adjacent*.
+- Dataset22, contains approximately 22 LEGO's per image which results in 28160 LEGO's for training. All LEGO's are *adjacent*.
 
 Both datasets are in a zip archive and stored separately on a Google Drive. Once you open and run the Colab Notebook, you can run the first code to copy the datasets over to your own Google Drive. Afterwards make sure the folder structure is as following:
 
