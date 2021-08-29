@@ -77,7 +77,7 @@ This is the easiest way to run this project.
 6. You might need to adjust the paths in the notebook **/content/drive/My Drive/lego-cnn** to your setup.
 7. Run the notebook
 
-Please note that training on Colab is not working at the moment. There is a bug, probably related to some changes in the Colab package versions. It will be fixed shortly, until then please run on your local machine. 
+Please note that training on Colab is not working at the moment. There is a bug, probably related to some changes in the Colab package versions. Please run on your local machine. 
 
 ## Run on Local Machine
 
